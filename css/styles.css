@@ -28,6 +28,7 @@
   --header-color--: #ffffff;
   --button-current-color--: #f5f4fa;
   --grid-item: 4;
+  --icon-color--: #afb1b8;
 }
 html {
   box-sizing: border-box;
@@ -207,19 +208,20 @@ img {
 }
 
 .main-button {
-  font-weight: bold;
-  font-size: 16px;
-  line-height: 1.9;
   color: var(--header-color--);
   background-color: var(--accent-color--);
-  text-transform: uppercase;
-  display: inline-block;
-  cursor: pointer;
-  border-radius: 4px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  letter-spacing: 0.06em;
+  font-family: inherit;
   padding: 10px 32px 10px 32px;
+  border: 0;
+  border-radius: 4px;
+  display: inline-block;
   min-width: 200px;
   text-align: center;
-  border-color: transparent;
+  cursor: pointer;
 }
 .main-button:hover,
 .main-button:focus {
@@ -262,6 +264,30 @@ img {
   font-size: 14px;
 
   margin-bottom: 10px;
+}
+.letter-item::before {
+  content: "";
+  display: inline-block;
+  height: 120px;
+  margin-bottom: 30px;
+  border-radius: 4px;
+  /*background-size: 65.32px 70px;*/
+  width: 270px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: var(--button-current-color--);
+}
+.letter-item.antenna-icon::before {
+  background-image: url(../images/icons/antenna.svg);
+}
+.letter-item.clock-icon::before {
+  background-image: url(../images/icons/clock.svg);
+}
+.letter-item.diagram-icon::before {
+  background-image: url(../images/icons/diagram.svg);
+}
+.letter-item.astronaut-icon::before {
+  background-image: url(../images/icons/astronaut.svg);
 }
 .letter-item:not(:last-child) {
   margin-right: 30px;
@@ -332,6 +358,11 @@ img {
   font-size: 16px;
   color: var(--text--color--);
 }
+.clients {
+  font-weight: bold;
+  font-size: 36px;
+  text-align: center;
+}
 .social-icon {
   display: flex;
   padding-bottom: 30px;
@@ -362,6 +393,46 @@ img {
 }
 .icon {
   fill: var(--text--color--);
+}
+.extra {
+  display: flex;
+}
+.extra-item {
+  flex-basis: calc((100% - 30px * 6) / 6);
+  margin-right: 30px;
+  margin-top: 30px;
+  /*width: 170px;
+  height: 92px;
+  padding: 16px 32px;*/
+  border: 1px solid var(--icon-color--);
+  border-radius: 4px;
+}
+.extra-item:not(last-child) {
+  margin-right: 30px;
+}
+.extra-item:hover,
+.extra-item:focus {
+  border-color: var(--accent-color--);
+}
+.clients-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90px;
+  width: 170px;
+  /*border: 1px solid var(--icon-color);
+  border-radius: 4px;*/
+}
+.clients-link:hover .clients-icon,
+.clients-link:focus .clients-icon {
+  fill: var(--accent-color--);
+}
+.clients-icon {
+  fill: #afb1b8;
+}
+.extra-section {
+  padding-top: 94px;
+  padding-bottom: 94px;
 }
 .foot {
   background-color: #2f303a;
@@ -399,6 +470,59 @@ img {
   font-style: normal;
   font-weight: normal;
   /*display: block;*/
+}
+.flex-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -30px;
+  margin-top: -30px;
+}
+.flex-item {
+  flex-basis: calc((100% - 30px * 4) / 4);
+  margin-left: 30px;
+  margin-top: 30px;
+}
+.socials {
+  padding-top: 12px;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+.social-icons {
+  display: flex;
+}
+
+.social-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 44px;
+  width: 44px;
+  border-radius: 50%;
+  background-color: #44454e;
+}
+.social-link:hover,
+.social-link:focus {
+  background-color: var(--accent-color--);
+}
+.social-icon-down .icon {
+  width: 20px;
+  height: 20px;
+  fill: var(--icon-color--);
+}
+
+.social-icon-down:not(:last-child) {
+  margin-right: 10px;
+}
+
+.social-link:hover .icon,
+.social-link:focus .icon {
+  fill: var(--button-current-color--);
+}
+.flex-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -30px;
+  margin-top: -30px;
 }
 
 .location {
@@ -468,6 +592,12 @@ img {
   margin-right: 30px;
   margin-bottom: 30px;
   flex-basis: ((100% - 90px) / 3);
+  cursor: pointer;
+}
+.portfolio-item:hover,
+.portfolio-item:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 .images-all {
   flex-wrap: wrap;
